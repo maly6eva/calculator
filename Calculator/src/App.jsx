@@ -18,6 +18,7 @@ function Calculator() {
     function resultCount(value) {
         if (value === 'C') {
             setCount('0')
+            return
         } else if (value === '=') {
             setCount(eval(count).toString())
         }
@@ -52,7 +53,7 @@ function Calculator() {
                     <button onClick={() => resultCount(',')}>,</button>
                     <button className="equals" onClick={() => resultCount('=')}>=</button>
                     <button className="operator" onClick={() => resultCount('/')}>/</button>
-                    <button className="clear" onClick={() => setCount('0')}>C</button>
+                    <button className="clear" onClick={() => resultCount('C')}>C</button>
                 </div>
             </div>
             <div className="technologies-used">
